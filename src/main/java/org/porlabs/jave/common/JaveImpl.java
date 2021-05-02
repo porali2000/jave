@@ -20,7 +20,7 @@ public class JaveImpl implements Jave {
             new Encoder().encode(new MultimediaObject(source), target, JaveUtil.getEncodingAttributes(audioFormat, bitrate));
         } catch (EncoderException e) {
             e.printStackTrace();
-            throw new RuntimeException("Input Process failed");
+            throw new RuntimeException("Encoder Process failed");
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Unexpected process failure");

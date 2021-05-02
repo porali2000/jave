@@ -8,6 +8,7 @@ import ws.schild.jave.Encoder;
 import java.io.File;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class ConversionTest {
 
@@ -21,13 +22,39 @@ public class ConversionTest {
     @Test
     public void testWavToMp3() {
         try {
-            String sourcePath = "/resources/sample.wav";
+            String sourcePath = "/src/test/resources/sample.wav";
             String targetName = "output";
             File source = new File(sourcePath);
             this.jave.convert(source, targetName, AudioFormat.MP3, BitRate.BitRate_112800);
         } catch (Exception e) {
             e.printStackTrace();
+            fail("WavToMp3 failed");
         }
-        System.out.printf("Done"); //TODO: Remove console output
+    }
+
+    @Test
+    public void testMp3ToWav() {
+        try {
+            String sourcePath = "/src/test/resources/sample.mp3";
+            String targetName = "output";
+            File source = new File(sourcePath);
+            this.jave.convert(source, targetName, AudioFormat.WAV, BitRate.BitRate_112800);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Mp3ToWav failed");
+        }
+    }
+
+    @Test
+    public void testMp3ToAc3() {
+        try {
+            String sourcePath = "/src/test/resources/sample.mp3";
+            String targetName = "output";
+            File source = new File(sourcePath);
+            this.jave.convert(source, targetName, AudioFormat.AC3, BitRate.BitRate_112800);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Mp3ToAc3 failed");
+        }
     }
 }
