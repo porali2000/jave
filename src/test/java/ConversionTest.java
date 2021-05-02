@@ -21,7 +21,7 @@ public class ConversionTest {
     @Test
     public void testWavToMp3() {
         try {
-            String sourcePath = "/Users/poorani/work/sourcecode/git/jave/src/test/resources/sample.wav";
+            String sourcePath = "/resources/sample.wav";
             String targetName = "output";
             File source = new File(sourcePath);
             this.jave.convert(source, targetName, AUDIO_FORMAT.MP3, BITRATE.BitRate_112800);
