@@ -11,7 +11,7 @@ import static org.apache.commons.lang3.ObjectUtils.isEmpty;
 
 public class JaveImpl implements Jave {
     @Override
-    public void convert(final File source, final String targetName, final AUDIO_FORMAT audioFormat, final BITRATE bitrate) {
+    public void convert(final File source, final String targetName, final AudioFormat audioFormat, final BitRate bitrate) {
         try {
             if(isEmpty(source) || isEmpty(targetName) || isEmpty(audioFormat) || isEmpty(bitrate)) {
                 throw new RuntimeException("Input requirement failed");

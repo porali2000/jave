@@ -1,13 +1,12 @@
 package org.porlabs.jave.common;
 
-import org.apache.commons.lang3.ObjectUtils;
 import ws.schild.jave.encode.AudioAttributes;
 import ws.schild.jave.encode.EncodingAttributes;
 
 import static org.apache.commons.lang3.ObjectUtils.isEmpty;
 
 public class JaveUtil {
-    public static EncodingAttributes getEncodingAttributes(AUDIO_FORMAT audioFormat, BITRATE bitRate) {
+    public static EncodingAttributes getEncodingAttributes(AudioFormat audioFormat, BitRate bitRate) {
         if(isEmpty(audioFormat)) {
             throw new RuntimeException("Audio format required");
         }

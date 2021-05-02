@@ -1,6 +1,6 @@
 import org.junit.Test;
-import org.porlabs.jave.common.AUDIO_FORMAT;
-import org.porlabs.jave.common.BITRATE;
+import org.porlabs.jave.common.AudioFormat;
+import org.porlabs.jave.common.BitRate;
 import org.porlabs.jave.common.Jave;
 import org.porlabs.jave.common.JaveImpl;
 import ws.schild.jave.Encoder;
@@ -24,7 +24,7 @@ public class ConversionTest {
             String sourcePath = "/resources/sample.wav";
             String targetName = "output";
             File source = new File(sourcePath);
-            this.jave.convert(source, targetName, AUDIO_FORMAT.MP3, BITRATE.BitRate_112800);
+            this.jave.convert(source, targetName, AudioFormat.MP3, BitRate.BitRate_112800);
         } catch (Exception e) {
             e.printStackTrace();
         }
